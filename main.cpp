@@ -1,42 +1,6 @@
 #include <iostream>
+#include "game.hpp"
 
-
-
-char board[3][3]={{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}};
-
-void printBoard()
-{
-  for(int i=0; i<3; i++)
-  {
-    for(int j=0; j<3; j++)
-    {
-    std::cout << board[i][j];
-      if(j < 2){
-    std::cout << "||";
-      }
-    }
-    std::cout << std::endl;
-    if(i < 2){
-      std::cout << "=======" << std::endl;
-
-    }
-
-  }
-
-}
-
-void makeMove(int turn, int rowIn, int colIn)
-{
-  if(turn == 0)
-  {
-    board[colIn][rowIn] = 'G';
-  }
-  else
-  {
-    board[colIn][rowIn] = 'B';
-  }
-
-}
 
 int main(){
 
@@ -45,11 +9,16 @@ int main(){
   bool gameOver = false;
   int colIn;
   int rowIn;
-
-
-
-
-
+  bool turnOver = false;
+  std::cout << "OPENING G&B.EXE" << std::endl;
+  std::cout << "START." << std::endl;
+  std::cout << "." << std::endl;
+  std::cout << "." << std::endl;
+  std::cout << "." << std::endl;
+  std::cout << "LOADING." << std::endl;
+  std::cout << "." << std::endl;
+  std::cout << "." << std::endl;
+  std::cout << "." << std::endl;
 std::cout << "WELCOME TO GHOULS AND BALLERINAS" << std::endl;
 
 while(gameOver == false)
@@ -63,20 +32,16 @@ while(gameOver == false)
     {
       std::cout << "BALLERINA'S TURN" << std::endl;
     }
-
-    std::cout << "PICK YOUR COLUMN";
-    std::cin >> rowIn;
-    std::cout << "PICK YOUR ROW";
-    std::cin >> colIn;
-    if(turn == 0)
+    while(turnOver == false)
     {
-      board[colIn][rowIn] = 'G';
-    }
-    else
-    {
-      board[colIn][rowIn] = 'B';
+      std::cout << "PICK YOUR COLUMN";
+      std::cin >> rowIn;
+      std::cout << "PICK YOUR ROW";
+      std::cin >> colIn;
+      turnOver = myGame.makeMove(turn, rowIn, colIn);
     }
 
+    turnOver = false;
     turn++;
     turn %= 2;
 
