@@ -15,7 +15,13 @@ int main(){
   std::cout << "." << std::endl;
   std::cout << "." << std::endl;
   std::cout << "." << std::endl;
+  std::cout << "." << std::endl;
+  std::cout << "." << std::endl;
+  std::cout << "." << std::endl;
   std::cout << "LOADING." << std::endl;
+  std::cout << "." << std::endl;
+  std::cout << "." << std::endl;
+  std::cout << "." << std::endl;
   std::cout << "." << std::endl;
   std::cout << "." << std::endl;
   std::cout << "." << std::endl;
@@ -42,10 +48,20 @@ while(gameOver == false)
     }
 
     turnOver = false;
+    gameOver = myGame.testForWin();
     turn++;
     turn %= 2;
 
 
 
   }
+  if(turn == 1)
+  {
+    std::cout << "CONGRADULATIONS. GHOULS HAVE ONE." << std::endl;
+  }
+  else
+  {
+    std::cout << "CONGRADULATIONS. BALLERINAS HAVE ONE." << std::endl;
+  }
+
 }
