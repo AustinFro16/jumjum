@@ -95,6 +95,10 @@ bool makeMove(int turn, int rowIn, int colIn)
     }
     return false;
   }
+  char getspace(int x, int y)
+  {
+    return board[x][y];
+  }
 };
 
 
